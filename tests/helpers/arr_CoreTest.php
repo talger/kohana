@@ -1,6 +1,6 @@
 <?php
- 
-class arr_CoreTest extends PHPUnit_Framework_TestCase 
+
+class arr_CoreTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -13,12 +13,12 @@ class arr_CoreTest extends PHPUnit_Framework_TestCase
 
     public function providerCallback_string()
     {
-        return [
-            ['limit[10]', ['limit', [10]]],
-            ['limit[10,20]', ['limit', [10, 20]]],
-            ['limit[10,20,30]', ['limit', [10, 20, 30]]],
-            ['limit', ['limit', null]],
-        ];
+        return array(
+            array('limit[10]', array('limit', array(10))),
+            array('limit[10,20]', array('limit', array(10, 20))),
+            array('limit[10,20,30]', array('limit', array(10, 20, 30))),
+            array('limit', array('limit', null)),
+        );
     }
 
     /**
@@ -32,9 +32,9 @@ class arr_CoreTest extends PHPUnit_Framework_TestCase
 
     public function providerRotate()
     {
-        return [
-            [false, false, false]
-        ];
+        return array(
+            array(false, false, false)
+        );
     }
 
     /**
@@ -47,10 +47,10 @@ class arr_CoreTest extends PHPUnit_Framework_TestCase
 
     public function providerRemove()
     {
-        return [
-            [1, [1 => 'one', 2 => 'two'], 'one'],
-            ['one', ['one' => 'one', 2 => 'two'], 'one']
-        ];
+        return array(
+            array(1, array(1 => 'one', 2 => 'two'), 'one'),
+            array('one', array('one' => 'one', 2 => 'two'), 'one')
+        );
     }
 
     /**
@@ -63,14 +63,14 @@ class arr_CoreTest extends PHPUnit_Framework_TestCase
 
     public function providerRange()
     {
-        return [
-            [10, 100, array_combine(range(10,100, 10), range(10,100, 10))],
-        ];
+        return array(
+            array(10, 100, array_combine(range(10,100, 10), range(10,100, 10))),
+        );
     }
 
     public function testTo_array()
     {
-        $array = ['int' => 1, 'string' => 'string', 'array' => array_combine(['a','b','c'], range(1,3))];
+        $array = array('int' => 1, 'string' => 'string', 'array' => array_combine(array('a','b','c'), range(1,3)));
 
         $expected = new stdClass();
         $expected->int = 1;

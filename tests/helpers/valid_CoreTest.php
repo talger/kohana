@@ -1,6 +1,6 @@
 <?php
- 
-class valid_CoreTest extends PHPUnit_Framework_TestCase 
+
+class valid_CoreTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -13,13 +13,13 @@ class valid_CoreTest extends PHPUnit_Framework_TestCase
 
     public function providerPhone()
     {
-        return [
-            ['7890', null, false],
-            ['1234567890', null, true],
-            ['1234567', null, true],
-            ['12345678900', null, true],
-            ['1sd2sdf3sdfg4ert5qwer6asdf7f8asdf900', null, true],
-        ];
+        return array(
+            array('7890', null, false),
+            array('1234567890', null, true),
+            array('1234567', null, true),
+            array('12345678900', null, true),
+            array('1sd2sdf3sdfg4ert5qwer6asdf7f8asdf900', null, true),
+        );
     }
 
         /**
@@ -32,14 +32,14 @@ class valid_CoreTest extends PHPUnit_Framework_TestCase
 
     public function providerDate()
     {
-        return [
-            ['now', true],
-            ['last Monday', true],
-            ['ma', false],
-            ['10 September 2000', true],
-            [0, false],
-        ];
+        return array(
+            array('now', true),
+            array('last Monday', true),
+            array('ma', false),
+            array('10 September 2000', true),
+            array(0, false),
+        );
     }
 
-    
+
 }
