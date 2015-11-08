@@ -1,7 +1,34 @@
 <?php
- 
-class date_CoreTest extends PHPUnit_Framework_TestCase 
+
+/**
+ * @runTestsInSeparateProcesses
+ */
+class date_CoreTest extends PHPUnit_Framework_TestCase
 {
+
+    public function setUp()
+    {
+        eval('
+            class Kohana {
+
+                public static function config($key)
+                {
+                    require dirname(__FILE__) . "/../../src/config/inflector.php";
+
+                    if ($key == "inflector.irregular") {
+                        return $config["irregular"];
+                    }
+
+
+                    if ($key == "inflector.uncountable") {
+                        return $config["uncountable"];
+                    }
+
+                    return array();
+                }
+            }
+        ');
+    }
 
     /**
      * @dataProvider providerAmpm
@@ -53,7 +80,7 @@ class date_CoreTest extends PHPUnit_Framework_TestCase
             array(2, 2016, array_combine(range(1, 29), range(1, 29))),
         );
     }
-    
+
     /**
      * @dataProvider providerYears
      */
@@ -71,6 +98,11 @@ class date_CoreTest extends PHPUnit_Framework_TestCase
             )),
             array(2014, 2016, array(2014 => 2014, 2015 => 2015, 2016 => 2016)),
         );
+    }
+
+    public function testMonths()
+    {
+        $this->assertEquals(array_combine(range(1, 12),range(1, 12)), date_Core::months());
     }
 
     /**
@@ -119,6 +151,65 @@ class date_CoreTest extends PHPUnit_Framework_TestCase
             array(1, true, null, array_combine(range(0, 23), range(0, 23))),
             array(1, false, 6, array_combine(range(6, 12), range(6, 12))),
             array(1, true, 6, array_combine(range(6, 23), range(6, 23))),
+        );
+    }
+
+    /**
+     * @dataProvider providerTimespan
+     */
+    public function testTimespan($expected, $time1, $time2, $output)
+    {
+        $this->assertEquals($expected, date_Core::timespan($time1, $time2, $output));
+    }
+
+    public function providerTimespan()
+    {
+        return array(
+            array(1, strtotime('2015-01-01 00:00:00'), strtotime('2015-01-02 00:00:00'), 'days'),
+            array(array('days' => 1, 'hours' => 1), strtotime('2015-01-01 00:00:00'), strtotime('2015-01-02 01:00:00'), 'days,hours'),
+        );
+    }
+
+    /**
+     * @dataProvider providerTimespan_string
+     */
+    public function testTimespan_string($expected, $time1, $time2, $output)
+    {
+        $this->assertEquals($expected, date_Core::timespan_string($time1, $time2, $output));
+    }
+
+    public function providerTimespan_string()
+    {
+        return array(
+            array('1 day', strtotime('2015-01-01 00:00:00'), strtotime('2015-01-02 00:00:00'), 'days'),
+            array(' 1 day and 1 hour', strtotime('2015-01-01 00:00:00'), strtotime('2015-01-02 01:00:00'), 'days,hours'),
+        );
+    }
+
+    public function testUnix2dos()
+    {
+        $this->assertEquals(2162688, date_Core::unix2dos(mktime(0,0,0, 1,1,1970)));
+        $this->assertEquals(932386286, date_Core::unix2dos(1198032448));
+    }
+
+    public function testDos2unix()
+    {
+        $this->assertEquals(1198032448, date_Core::dos2unix(932386286));
+    }
+
+    /**
+     * @dataProvider providerOffset
+     */
+    public function testOffset($expected, $remote, $local)
+    {
+        $this->assertEquals($expected, date_Core::offset($remote, $local));
+    }
+
+    public function providerOffset()
+    {
+        return array(
+            array(-3600, 'Europe/London', 'Europe/Budapest'),
+            array(0, 'Europe/London', true),
         );
     }
 }
