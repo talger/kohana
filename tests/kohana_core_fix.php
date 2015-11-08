@@ -19,3 +19,4 @@ class_alias('format_Core', 'format');
 class_alias('request_Core', 'request');
 class_alias('url_Core', 'url');
 class_alias('date_Core', 'date');
+class_alias('security_Core', 'security');

@@ -3,7 +3,7 @@
 /**
  * @runTestsInSeparateProcesses
  */
-class request_CoreTest extends PHPUnit_Framework_TestCase 
+class request_CoreTest extends PHPUnit_Framework_TestCase
 {
 
     /**
@@ -29,6 +29,7 @@ class request_CoreTest extends PHPUnit_Framework_TestCase
     public function testProtocol()
     {
         $this->assertNull(request_Core::protocol());
+        $this->markTestIncomplete();
     }
 
     /**
