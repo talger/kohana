@@ -22,12 +22,12 @@ class download_CoreTest extends PHPUnit_Framework_TestCase
                     return isset($config[$key]) ? $config[$key] : null;
                 }
 
-                public function user_agent()
+                public static function user_agent()
                 {
                     return self::$__user_agent;
                 }
 
-                public function close_buffers()
+                public static function close_buffers()
                 {}
             }
         ');
