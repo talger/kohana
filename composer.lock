@@ -4,9 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "422a035dfd02fd957ff3c88e91332359",
-    "content-hash": "0a5f0ce6d54943ae8e4357fbd363a591",
-    "packages": [
+    "hash": "b34bf5a8a0671b7e69654a4d75a05015",
+    "content-hash": "7016d612225a97777777a3aa4d50f3b3",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
@@ -60,172 +61,6 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
-        },
-        {
-            "name": "php-mock/php-mock",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-mock/php-mock.git",
-                "reference": "12e20696945849989ec6dc8ee0c7f8c843326f68"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-mock/php-mock/zipball/12e20696945849989ec6dc8ee0c7f8c843326f68",
-                "reference": "12e20696945849989ec6dc8ee0c7f8c843326f68",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5",
-                "phpunit/php-text-template": "^1"
-            },
-            "replace": {
-                "malkusch/php-mock": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4|^5"
-            },
-            "suggest": {
-                "php-mock/php-mock-mockery": "Allows using PHPMockery for Mockery integration",
-                "php-mock/php-mock-phpunit": "Allows integration into PHPUnit testcase with the trait PHPMock."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "phpmock\\": [
-                        "classes/",
-                        "tests/unit/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "WTFPL"
-            ],
-            "authors": [
-                {
-                    "name": "Markus Malkusch",
-                    "email": "markus@malkusch.de",
-                    "homepage": "http://markus.malkusch.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP-Mock can mock built-in PHP functions (e.g. time()). PHP-Mock relies on PHP's namespace fallback policy. No further extension is needed.",
-            "homepage": "https://github.com/php-mock/php-mock",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "function",
-                "mock",
-                "stub",
-                "test",
-                "test double"
-            ],
-            "time": "2015-10-26 20:55:46"
-        },
-        {
-            "name": "php-mock/php-mock-integration",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-mock/php-mock-integration.git",
-                "reference": "e83fb65dd20cd3cf250d554cbd4682b96b684f4b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-mock/php-mock-integration/zipball/e83fb65dd20cd3cf250d554cbd4682b96b684f4b",
-                "reference": "e83fb65dd20cd3cf250d554cbd4682b96b684f4b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5",
-                "php-mock/php-mock": "^1",
-                "phpunit/php-text-template": "^1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4|^5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "phpmock\\integration\\": "classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "WTFPL"
-            ],
-            "authors": [
-                {
-                    "name": "Markus Malkusch",
-                    "email": "markus@malkusch.de",
-                    "homepage": "http://markus.malkusch.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Integration package for PHP-Mock",
-            "homepage": "https://github.com/php-mock/php-mock-integration",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "function",
-                "mock",
-                "stub",
-                "test",
-                "test double"
-            ],
-            "time": "2015-10-26 21:21:42"
-        },
-        {
-            "name": "php-mock/php-mock-phpunit",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-mock/php-mock-phpunit.git",
-                "reference": "d2edb32ec05584bb6bd8f1b7e94284022fb12d75"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-mock/php-mock-phpunit/zipball/d2edb32ec05584bb6bd8f1b7e94284022fb12d75",
-                "reference": "d2edb32ec05584bb6bd8f1b7e94284022fb12d75",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5",
-                "php-mock/php-mock-integration": "^1",
-                "phpunit/phpunit": "^4.0.0 || ^5.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "phpmock\\phpunit\\": "classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "WTFPL"
-            ],
-            "authors": [
-                {
-                    "name": "Markus Malkusch",
-                    "email": "markus@malkusch.de",
-                    "homepage": "http://markus.malkusch.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Mock built-in PHP functions (e.g. time()) with PHPUnit. This package relies on PHP's namespace fallback policy. No further extension is needed.",
-            "homepage": "https://github.com/php-mock/php-mock-phpunit",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "function",
-                "mock",
-                "phpunit",
-                "stub",
-                "test",
-                "test double"
-            ],
-            "time": "2015-11-04 23:39:54"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -705,6 +540,51 @@
             "time": "2015-10-02 06:51:40"
         },
         {
+            "name": "ramsey/array_column",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/array_column.git",
+                "reference": "f8e52eb28e67eb50e613b451dd916abcf783c1db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/array_column/zipball/f8e52eb28e67eb50e613b451dd916abcf783c1db",
+                "reference": "f8e52eb28e67eb50e613b451dd916abcf783c1db",
+                "shasum": ""
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "0.8.*",
+                "phpunit/phpunit": "~4.5",
+                "satooshi/php-coveralls": "0.6.*",
+                "squizlabs/php_codesniffer": "~2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/array_column.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Ramsey",
+                    "homepage": "http://benramsey.com"
+                }
+            ],
+            "description": "Provides functionality for array_column() to projects using PHP earlier than version 5.5.",
+            "homepage": "https://github.com/ramsey/array_column",
+            "keywords": [
+                "array",
+                "array_column",
+                "column"
+            ],
+            "time": "2015-03-20 22:07:39"
+        },
+        {
             "name": "sebastian/comparator",
             "version": "1.2.0",
             "source": {
@@ -1120,53 +1000,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2015-10-11 09:39:48"
-        }
-    ],
-    "packages-dev": [
-        {
-            "name": "ramsey/array_column",
-            "version": "1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ramsey/array_column.git",
-                "reference": "f8e52eb28e67eb50e613b451dd916abcf783c1db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/array_column/zipball/f8e52eb28e67eb50e613b451dd916abcf783c1db",
-                "reference": "f8e52eb28e67eb50e613b451dd916abcf783c1db",
-                "shasum": ""
-            },
-            "require-dev": {
-                "jakub-onderka/php-parallel-lint": "0.8.*",
-                "phpunit/phpunit": "~4.5",
-                "satooshi/php-coveralls": "0.6.*",
-                "squizlabs/php_codesniffer": "~2.2"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/array_column.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Ramsey",
-                    "homepage": "http://benramsey.com"
-                }
-            ],
-            "description": "Provides functionality for array_column() to projects using PHP earlier than version 5.5.",
-            "homepage": "https://github.com/ramsey/array_column",
-            "keywords": [
-                "array",
-                "array_column",
-                "column"
-            ],
-            "time": "2015-03-20 22:07:39"
         }
     ],
     "aliases": [],
